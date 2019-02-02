@@ -1,12 +1,23 @@
-<ion-header>
+<ion-header text-center>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      {{GetCurrentBookName(currentBook)}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-</ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-img src={{pageImagePath}}></ion-img>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-footer text-center>
+  <ion-toolbar>
+    <ion-title>
+      Footer
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
