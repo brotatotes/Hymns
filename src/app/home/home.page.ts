@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 // import { NavController } from 'ionic-angular';
+import 'hammerjs';
 
 const BLACKBOOK = "Songs_&_Hymns_Of_Life";
 const REDBOOK = "Songs-for-our-Generation_2015";
@@ -14,10 +15,11 @@ export class HomePage {
 
   private currentBook: string;
   private pageImagePath: string;
+  private page: number;
 
   constructor() {
     this.currentBook = BLACKBOOK;
-    this.pageImagePath = this.GetImagePath(this.currentBook, 15);
+    this.UpdatePage(18);
   }
 
   private GetImagePath(book: string, page: number): string {
@@ -26,5 +28,22 @@ export class HomePage {
 
   private GetCurrentBookName(book: string) {
     return book.replace(/_/g, ' ').replace(/-/g, ' ');
+  }
+
+  private UpdatePage(page: number) { //TODO: check page boundaries.
+    if (page < 1) {
+      return;
+    }
+    this.page = page;
+    this.pageImagePath = this.GetImagePath(this.currentBook, page);
+  }
+
+  private swipe(event): void {
+    console.log(event);
+    if (event.direction == 2) {
+      this.UpdatePage(this.page + 1);
+    } else if (event.direction == 4) {
+      this.UpdatePage(this.page - 1);
+    }
   }
 }

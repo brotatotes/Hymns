@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-grid>
+<ion-grid (swipe)="swipe($event)">
   <ion-row>
     <ion-col>
       <ion-img src={{pageImagePath}}></ion-img>
@@ -14,10 +14,10 @@
   </ion-row>
 </ion-grid>
 
-<ion-footer text-center>
+<!-- <ion-footer text-center>
   <ion-toolbar>
     <ion-title>
       Footer
     </ion-title>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->

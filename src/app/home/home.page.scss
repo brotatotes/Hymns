@@ -1,4 +1,7 @@
-ion-grid {
-    justify-content: space-evenly;
-    max-height: 100%;
+ion-grid * {
+    justify-content: center;
+}
+
+ion-img {
+    height: 80%;
 }
